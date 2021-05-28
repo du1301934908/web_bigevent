@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="/assets/css/user/user_avatar.css">
+    <link rel="stylesheet" href="/assets/lib/cropper/cropper.css" />
+</head>
+
+<body>
+    <div class="layui-card">
+        <div class="layui-card-header">更换头像</div>
+        <div class="layui-card-body">
+            <!-- 第一行的图片裁剪和预览区域 -->
+            <div class="row1">
+                <!-- 图片裁剪区域 -->
+                <div class="cropper-box">
+                    <!-- 这个 img 标签很重要，将来会把它初始化为裁剪区域 -->
+                    <img id="image" src="data:image/png;base64,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"  />
+                </div>
+                <!-- 图片的预览区域 -->
+                <div class="preview-box">
+                    <div>
+                        <!-- 宽高为 100px 的预览区域 -->
+                        <div class="img-preview w100"></div>
+                        <p class="size">100 x 100</p>
+                    </div>
+                    <div>
+                        <!-- 宽高为 50px 的预览区域 -->
+                        <div class="img-preview w50"></div>
+                        <p class="size">50 x 50</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第二行的按钮区域 -->
+            <div class="row2">
+                <input type="file" id="file" accept="image/png,image/jpeg">
+                <button type="button" class="layui-btn" id="btnChooseImage">上传</button>
+                <button type="button" class="layui-btn layui-btn-danger" id="btnUpload">确定</button>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/lib/layui/layui.all.js"></script>
+    <script src="/assets/lib/jquery.js"></script>
+    <script src="/assets/lib/cropper/Cropper.js"></script>
+    <script src="/assets/lib/cropper/jquery-cropper.js"></script>
+    <script src="/assets/js/baseAPI1.js"></script>
+    <script src="/assets/js/user/user_avatar.js"></script>
+</body>
+
+</html>
