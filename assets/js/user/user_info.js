@@ -50,7 +50,6 @@ $(function(){
                 inituserinfo(); 
                 window.parent.getUserInfo();
             }
-            
         })
     })
 })
